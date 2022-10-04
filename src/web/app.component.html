@@ -1,5 +1,13 @@
-<div>
-  <h1>Hello {{ title | titlecase }}</h1>
-  <app-product></app-product>
-  <router-outlet></router-outlet>
+<div class="wrapper">
+
+  <div  class="container">
+
+    <h1 class="title">Hello {{ title | titlecase }}</h1>
+
+    <app-product [product]="products[0]"></app-product>
+
+    <router-outlet></router-outlet>
+
+  </div>
+
 </div>

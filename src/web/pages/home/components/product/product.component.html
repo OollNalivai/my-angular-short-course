@@ -1,1 +1,7 @@
-<h2>product works!</h2>
+<h2>{{ product | json }}</h2>
+
+<div>
+  <img [src]="product?.image" width="200px" height="200px" [alt]="product?.title">
+  <p>Description: {{ product?.description }}</p>
+  <span>Price: {{ product?.price | currency }}</span>
+</div>

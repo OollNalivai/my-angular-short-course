@@ -1,4 +1,4 @@
-div {
+.wrapper {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -6,7 +6,12 @@ div {
   background-color: #797171;
 }
 
-h1  {
+.title  {
   margin: 0;
   padding: 20px;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
 }
