@@ -10,9 +10,14 @@ export class ProductComponent implements OnInit {
 
   @Input() product: ProductInterface | undefined
 
+  details = false
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  changeDetails() {
+    this.details = !this.details
+  }
 }

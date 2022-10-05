@@ -1,7 +1,20 @@
-<h2>{{ product | json }}</h2>
+<!--<h2>{{ product | json }}</h2>-->
 
-<div>
-  <img [src]="product?.image" width="200px" height="200px" [alt]="product?.title">
-  <p>Description: {{ product?.description }}</p>
-  <span>Price: {{ product?.price | currency }}</span>
+<div class="container" *ngIf="product; else nodata">
+
+  <img [src]="product.image" width="200px" height="200px" [alt]="product.title">
+
+  <p>Rate: {{ product.rating.rate }}</p>
+  <p>Price: {{ product.price | currency }}</p>
+
+  <button class="button" (click)="changeDetails()">{{ details? 'Hide' : 'Show' }} details</button>
+
+  <div *ngIf="details" class="subtitle">
+    <p>Description: {{ product.description }}</p>
+  </div>
+
 </div>
+
+<ng-template #nodata>
+  <h2>В бухгалтерии что-то напутали и Лупа получил за Пупу, а Пупа не получил данные товаров...</h2>
+</ng-template>

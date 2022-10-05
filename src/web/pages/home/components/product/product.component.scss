@@ -1,3 +1,28 @@
+.container {
+  min-height: 400px;
+  padding: 30px 5px;
+}
+
+.button {
+  padding: 5px;
+  width: 155px;
+  height: 38px;
+
+  font-size: 24px;
+
+  background-color: #dab55d;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #daa423;
+  }
+
+  &:active {
+    background-color: #9a6e00;
+  }
+}
+
 h2 {
   margin: 0;
   padding: 20px;
