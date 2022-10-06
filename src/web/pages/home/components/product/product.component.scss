@@ -1,5 +1,5 @@
 .container {
-  min-height: 400px;
+  min-height: 420px;
   padding: 30px 5px;
 }
 
@@ -9,10 +9,11 @@
   height: 38px;
 
   font-size: 24px;
-
-  background-color: #dab55d;
-
   cursor: pointer;
+}
+
+.yellow {
+  background-color: #dab55d;
 
   &:hover {
     background-color: #daa423;
@@ -20,6 +21,18 @@
 
   &:active {
     background-color: #9a6e00;
+  }
+}
+
+.blue {
+  background-color: #5db4da;
+
+  &:hover {
+    background-color: #5795dc;
+  }
+
+  &:active {
+    background-color: #5d72da;
   }
 }
 

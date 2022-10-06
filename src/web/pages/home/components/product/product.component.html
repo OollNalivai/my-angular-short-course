@@ -7,7 +7,7 @@
   <p>Rate: {{ product.rating.rate }}</p>
   <p>Price: {{ product.price | currency }}</p>
 
-  <button class="button" (click)="changeDetails()">{{ details? 'Hide' : 'Show' }} details</button>
+  <button class="button" [ngClass]="{'yellow': !details, 'blue': details }"  (click)="changeDetails()">{{ details? 'Hide' : 'Show' }} details</button>
 
   <div *ngIf="details" class="subtitle">
     <p>Description: {{ product.description }}</p>
