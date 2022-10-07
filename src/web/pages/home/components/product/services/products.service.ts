@@ -16,7 +16,7 @@ export class ProductsService {
     return this.http.get<ProductInterface[]>('https://fakestoreapi.com/products', {
       params: new HttpParams({
           fromObject: {
-            limit: 5
+            limit: 3
           }
         }
       )

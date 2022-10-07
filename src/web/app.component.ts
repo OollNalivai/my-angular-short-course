@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductInterface } from '../models/interfaces/product.interface';
 import { ProductsService } from './pages/home/components/product/services/products.service';
+import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,19 +11,27 @@ import { ProductsService } from './pages/home/components/product/services/produc
 export class AppComponent implements OnInit{
 
   title = 'my-angular-short-course';
-  products: ProductInterface[] = []
+  // products: ProductInterface[] = []
   loading = false
+  products$: Observable<ProductInterface[]> | undefined
 
   constructor(private productsService: ProductsService) {
   }
 
   ngOnInit(): void {
     this.loading = true
-    this.productsService.getAll().subscribe( products => {
-      console.log(products)
-      this.products = products
-      this.loading = false
-    })
+
+    this.products$ = this.productsService.getAll().pipe(
+      tap(
+        () => this.loading = false
+      )
+    )
+
+    // this.productsService.getAll().subscribe( products => {
+    //   console.log(products)
+    //   this.products = products
+    //   this.loading = false
+    // })
   }
 
 }
