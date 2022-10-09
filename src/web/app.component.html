@@ -8,7 +8,9 @@
 
     <input type="text"
            class="search-field"
-           placeholder="Filter products...">
+           placeholder="Filter products..." [(ngModel)]="text">
+
+    <p>{{ text }}</p>
 
     <p *ngIf="loading" style="font-size: 36px; color: aliceblue">Loading products...</p>
 

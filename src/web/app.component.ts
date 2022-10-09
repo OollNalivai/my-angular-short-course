@@ -10,6 +10,8 @@ import { Observable, tap } from 'rxjs';
 })
 export class AppComponent implements OnInit{
 
+  text = ''
+
   title = 'my-angular-short-course';
   // products: ProductInterface[] = []
   loading = false
