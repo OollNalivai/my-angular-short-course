@@ -1,0 +1,28 @@
+.container {
+  height: 50px;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  background-color: rgba(252, 96, 96, 0.71);
+}
+
+.button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  background-color: #918686;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #706b6b;
+  }
+  &:active {
+    background-color: #4d4747;
+  }
+}

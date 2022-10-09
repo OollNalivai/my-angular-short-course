@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductInterface } from '../models/interfaces/product.interface';
-import { ProductsService } from './pages/home/components/product/services/products.service';
+import { ProductsService } from './shared/services/products.service';
 import { Observable, tap } from 'rxjs';
 
 @Component({

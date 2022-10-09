@@ -1,8 +1,14 @@
+<app-global-error></app-global-error>
+
 <div class="wrapper">
 
   <div  class="container">
 
     <h1 class="title">Hello {{ title | titlecase }}</h1>
+
+    <input type="text"
+           class="search-field"
+           placeholder="Filter products...">
 
     <p *ngIf="loading" style="font-size: 36px; color: aliceblue">Loading products...</p>
 
