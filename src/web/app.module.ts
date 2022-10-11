@@ -7,12 +7,18 @@ import { ProductComponent } from './pages/home/components/product/product.compon
 import { HttpClientModule } from '@angular/common/http';
 import { GlobalErrorComponent } from './shared/components/global-error/global-error.component';
 import { FormsModule } from '@angular/forms';
+import { FilterProductsPipe } from './shared/pipes/filter-products.pipe';
+import { ModalComponent } from './pages/home/components/modal/modal.component';
+import { CreateProductComponent } from './pages/home/components/create-product/create-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    GlobalErrorComponent
+    GlobalErrorComponent,
+    FilterProductsPipe,
+    ModalComponent,
+    CreateProductComponent
   ],
   imports: [
     BrowserModule,

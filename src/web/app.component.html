@@ -14,7 +14,11 @@
 
     <p *ngIf="loading" style="font-size: 36px; color: aliceblue">Loading products...</p>
 
-    <app-product *ngFor="let product of products$ | async" [product]="product"></app-product>
+    <div *ngIf="products$ | async as products">
+      <app-product *ngFor="let product of products | filterProducts: text" [product]="product"></app-product>
+    </div>
+
+    <app-modal></app-modal>
 
     <router-outlet></router-outlet>
 
