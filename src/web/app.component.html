@@ -18,7 +18,9 @@
       <app-product *ngFor="let product of products | filterProducts: text" [product]="product"></app-product>
     </div>
 
-    <app-modal></app-modal>
+    <app-modal title="Create new product">
+      <app-create-product></app-create-product>
+    </app-modal>
 
     <router-outlet></router-outlet>
 
