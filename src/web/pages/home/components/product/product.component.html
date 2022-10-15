@@ -5,7 +5,7 @@
   <h3>{{ product.title }}</h3>
   <img [src]="product.image" width="200px" height="200px" [alt]="product.title">
 
-  <p>Rate: {{ product.rating.rate }}</p>
+  <p>Rate: {{ product.rating?.rate || 0 }}</p>
   <p>Price: {{ product.price | currency }}</p>
 
   <button class="button" [ngClass]="{'yellow': !details, 'blue': details }"  (click)="changeDetails()">{{ details? 'Hide' : 'Show' }} details</button>

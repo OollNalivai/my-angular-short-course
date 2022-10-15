@@ -31,15 +31,11 @@ export class CreateProductComponent implements OnInit {
   submit() {
     console.log(this.title);
     this.productService.create({
-      title: this.form.value as string,
+      title: this.form.value.title as string,
       price: 13.5,
       description: 'lorem ipsum set',
       image: 'https://i.pravatar.cc',
-      category: 'electronic',
-      rating: {
-        rate: 23,
-        count: 4
-      }
+      category: 'electronic'
     }).subscribe(() => {
         this.modalService.closeModal()
     });

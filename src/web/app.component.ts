@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductInterface } from '../models/interfaces/product.interface';
 import { ProductsService } from './shared/services/products.service';
-import { Observable, tap } from 'rxjs';
 import { ModalService } from './shared/services/modal.service';
 
 @Component({
@@ -14,28 +12,18 @@ export class AppComponent implements OnInit{
   text = ''
 
   title = 'my-angular-short-course';
-  // products: ProductInterface[] = []
   loading = false
-  products$: Observable<ProductInterface[]> | undefined
 
-  constructor(private productsService: ProductsService,
+  constructor(public productsService: ProductsService,
               public modalService: ModalService) {
   }
 
   ngOnInit(): void {
     this.loading = true
 
-    this.products$ = this.productsService.getAll().pipe(
-      tap(
-        () => this.loading = false
-      )
-    )
-
-    // this.productsService.getAll().subscribe( products => {
-    //   console.log(products)
-    //   this.products = products
-    //   this.loading = false
-    // })
+    this.productsService.getAll().subscribe( () => {
+      this.loading = false
+    })
   }
 
 }
