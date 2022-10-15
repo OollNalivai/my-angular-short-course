@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ModalService } from '../../../../shared/services/modal.service';
 
 @Component({
   selector: 'app-modal',
@@ -9,7 +10,7 @@ export class ModalComponent implements OnInit {
 
   @Input() title: string | undefined
 
-  constructor() { }
+  constructor(public modalService: ModalService) { }
 
   ngOnInit(): void {
   }

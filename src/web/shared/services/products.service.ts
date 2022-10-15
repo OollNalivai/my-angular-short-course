@@ -30,6 +30,10 @@ export class ProductsService {
     );
   }
 
+  create(product: ProductInterface): Observable<ProductInterface> {
+    return this.http.post<ProductInterface>( environment.productsData, product)
+  }
+
   private errorHandler(error: HttpErrorResponse) {
     this.errorService.handle(error.message);
     return throwError(() => error.message);

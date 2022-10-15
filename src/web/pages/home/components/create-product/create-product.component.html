@@ -1,9 +1,15 @@
 <form style="text-align: center; padding: 20px 5px" [formGroup]="form" (ngSubmit)="submit()">
 
-  <input type="text"
-  placeholder="Product name" formControlName="title">
+  <input
+    type="text"
+    placeholder="Product name"
+    formControlName="title"
+    appFocus
+  >
 
-  <p style="background-color: red; color: white; font-size: 28px;" *ngIf="title.errors && title.touched">Please fill title field width min length</p>
+  <p style="background-color: red; color: white; font-size: 28px;"
+     *ngIf="title.errors && title.touched"
+  >Please fill title field width min length</p>
 
   <button type="submit">
     Create

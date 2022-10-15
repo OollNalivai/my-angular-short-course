@@ -18,9 +18,13 @@
       <app-product *ngFor="let product of products | filterProducts: text" [product]="product"></app-product>
     </div>
 
-    <app-modal title="Create new product">
+    <app-modal *ngIf="modalService.isVisible$ | async" title="Create new product">
       <app-create-product></app-create-product>
     </app-modal>
+
+    <button (click)="modalService.openModal()">
+      Open modal
+    </button>
 
     <router-outlet></router-outlet>
 

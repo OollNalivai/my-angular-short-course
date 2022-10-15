@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ProductsService } from '../../../../shared/services/products.service';
+import { ModalService } from '../../../../shared/services/modal.service';
 
 @Component({
   selector: 'app-create-product',
@@ -13,9 +15,11 @@ export class CreateProductComponent implements OnInit {
       Validators.required,
       Validators.minLength(6)
     ])
-  })
+  });
 
-  constructor() { }
+  constructor(private productService: ProductsService,
+              private modalService: ModalService) {
+  }
 
   ngOnInit(): void {
   }
@@ -25,6 +29,19 @@ export class CreateProductComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.title)
+    console.log(this.title);
+    this.productService.create({
+      title: this.form.value as string,
+      price: 13.5,
+      description: 'lorem ipsum set',
+      image: 'https://i.pravatar.cc',
+      category: 'electronic',
+      rating: {
+        rate: 23,
+        count: 4
+      }
+    }).subscribe(() => {
+        this.modalService.closeModal()
+    });
   }
 }
